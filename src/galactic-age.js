@@ -11,6 +11,11 @@ export class GalacticAge {
     this.venusAgeYears = 0;
     this.marsAgeYears = 0;
     this.jupiterAge = 0;
+    this.nextEarthBirthday = null
+    this.nextMercuryBirthday = null;
+    this.nextVenusBirthday = null;
+    this.nextMarsBirthday = null;
+    this.nextJupiterBirthday = null;
   }
 
   setUserBirthDate(date) {
@@ -42,6 +47,29 @@ export class GalacticAge {
     let jupiterMills = diffAge / 11.86; 
     this.jupiterAge = new Date(jupiterMills);
     this.jupiterAgeYears = Math.abs(this.jupiterAge.getUTCFullYear() - 1970);
+
+  }
+
+  calculateNextBirthdays() {
+    let currentDate = new Date();
+    let earthYear, mercuryYear, venusYear, marsYear, jupiterYear;
+    earthYear = this.userBirthDate.getFullYear();
+    mercuryYear = this.mercuryAge.getFullYear();
+    venusYear = this.venusAge.getFullYear();
+    marsYear = this.marsAge.getFullYear();
+    jupiterYear = this.jupiterAge.getFullYear();
+
+    if(this.userBirthDate.getMonth() <= currentDate.getMonth() || this.userBirthDate.getDay() <= currentDate.getDay()) earthYear += 1;
+    if(this.mercuryAge.getMonth() <= currentDate.getMonth() || this.mercuryAge.getDay() <= currentDate.getDay()) mercuryYear += 1;
+    if(this.venusAge.getMonth() <= currentDate.getMonth() || this.venusAge.getDay() <= currentDate.getDay()) venusYear += 1;
+    if(this.marsAge.getMonth() <= currentDate.getMonth() || this.marsAge.getDay() <= currentDate.getDay()) marsYear += 1;
+    
+    let earthBirthDay = new Date(currentDate.getFullYear() + 1, this.userBirthDate.getMonth(), this.userBirthDate.getDay());
+    let mercuryBirthDay = new Date(currentDate.getFullYear() + 1, this.mercuryAge.getMonth(), this.mercuryAge.getDay());
+    let venusBirthDay = new Date(currentDate.getFullYear() + 1, this.venusAge.getMonth(), this.venusAge.getDay());
+    let marsBirthDay = new Date(currentDate.getFullYear() + 1, this.marsAge.getMonth(), this.marsAge.getDay());
+    let jupiterBirthDay = new Date(currentDate.getFullYear() + 1, this.jupiterAge.getMonth(), this.jupiterAge.getDay());
+
 
   }
 
