@@ -20,6 +20,8 @@ describe('GalacticAge', function(){
   it('should calculate and return the users earth age based on birthDate and current date', function() {
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
+    console.log(age.marsAge);
+    console.log(age.mercuryAge);
 
     expect(age.earthAgeYears).toEqual(39);
   });
@@ -90,6 +92,18 @@ describe('GalacticAge', function(){
     age.calculateNextBirthdays();
 
     expect(age.nextJupiterBirthday.getFullYear()).toEqual(2026);
+  });
+
+  it('should calculate and return remaining years based on life expectancy entered by user', function() {
+    age.userBirthDate = birthDate; 
+    age.calculateSolarAge();
+    age.calculateLifeExpectancy(75);
+
+    expect(age.earthLifeExpectancy).toEqual(36);
+    expect(age.mercuryLifeExpectancy).toEqual(-88);
+    expect(age.venusLifeExpectancy).toEqual(12);
+    expect(age.marsLifeExpectancy).toEqual(55);
+    expect(age.jupiterLifeExpectancy).toEqual(72);
   });
 
 

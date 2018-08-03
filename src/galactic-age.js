@@ -16,6 +16,11 @@ export class GalacticAge {
     this.nextVenusBirthday = null;
     this.nextMarsBirthday = null;
     this.nextJupiterBirthday = null;
+    this.earthLifeExpectancy = 0;
+    this.mercuryLifeExpectancy = 0;
+    this.venusLifeExpectancy = 0;
+    this.marsLifeExpectancy = 0;
+    this.jupiterLifeExpectancy = 0;
   }
 
   setUserBirthDate(date) {
@@ -57,7 +62,7 @@ export class GalacticAge {
     mercuryYear = currentDate.getFullYear();
     venusYear = currentDate.getFullYear();
     marsYear = currentDate.getFullYear();
-    jupiterYear = new Date((currentDate.getTime() - this.jupiterAge.getTime()) + (913430718720 / 11.86));
+    jupiterYear = new Date((this.jupiterAge.getTime()) + 913430718720);
 
     if(this.userBirthDate.getMonth() <= currentDate.getMonth() || this.userBirthDate.getDay() <= currentDate.getDay()) earthYear += 1;
     if(this.mercuryAge.getMonth() <= currentDate.getMonth() || this.mercuryAge.getDay() <= currentDate.getDay()) mercuryYear += 1;
@@ -70,6 +75,14 @@ export class GalacticAge {
     this.nextVenusBirthday = new Date(venusYear, this.venusAge.getMonth(), this.venusAge.getDay());
     this.nextMarsBirthday = new Date(marsYear, this.marsAge.getMonth(), this.marsAge.getDay());
     this.nextJupiterBirthday = new Date(jupiterYear.getFullYear(), this.jupiterAge.getMonth(), this.jupiterAge.getDay());
+  }
+
+  calculateLifeExpectancy(age) {
+    this.earthLifeExpectancy = age - this.earthAgeYears;
+    this.mercuryLifeExpectancy = age - this.mercuryAgeYears;
+    this.venusLifeExpectancy = age - this.venusAgeYears;
+    this.marsLifeExpectancy = age - this.marsAgeYears;
+    this.jupiterLifeExpectancy = age - this.jupiterAgeYears;
   }
 
 
