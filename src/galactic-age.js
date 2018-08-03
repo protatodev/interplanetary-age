@@ -21,13 +21,18 @@ export class GalacticAge {
     let diffAge = new Date().getTime() - this.userBirthDate.getTime();
     let diffDate = new Date(diffAge);
     let mercAge, venAge, venDate, marAge, marDate, jupAge, jupDate;
+    let mills;
 
     this.earthAgeYears = Math.abs(diffDate.getUTCFullYear() - 1970);
+    
 
-    // Mercury Age
-    mercAge = diffAge * .24;
-    this.mercuryAge = new Date(mercAge);
+
+    // Mercury Age    
+    console.log(diffAge);
+    let mercMills = diffAge / .24; 
+    this.mercuryAge = new Date(mercMills);
     this.mercuryAgeYears = Math.abs(this.mercuryAge.getUTCFullYear() - 1970);
+
 
     // Venus Age
 
