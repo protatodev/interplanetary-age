@@ -89,7 +89,7 @@ describe('GalacticAge', function(){
     age.calculateSolarAge();
     age.calculateNextBirthdays();
 
-    expect(age.nextJupiterBirthday.getFullYear()).toEqual(2026);
+    expect(age.nextJupiterBirthday.getFullYear()).toEqual(2028);
   });
 
   it('should calculate and return remaining years based on life expectancy entered by user', function() {
