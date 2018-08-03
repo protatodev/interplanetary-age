@@ -41,10 +41,10 @@ $(document).ready(function() {
 
 		let galaxy = new GalacticAge();
 		const inputtedDay = parseInt($("#inputtedBirthDay").val());
-		const inputtedMonth = parseInt($("#inputtedBirthMonth").val());
+		const inputtedMonth = parseInt($("#inputtedBirthMonth").val()) - 1;
 		const inputtedYear = parseInt($("#inputtedBirthYear").val());
 		const lifeExp = parseInt($("#inputtedLifeExp").val());
-		let birthdate = new Date(inputtedYear, inputtedMonth, inputtedDay);
+		const birthdate = new Date(inputtedYear, inputtedMonth, inputtedDay);
 		galaxy.setUserBirthDate(birthdate);
 		galaxy.calculateSolarAge();
 		galaxy.calculateNextBirthdays();
