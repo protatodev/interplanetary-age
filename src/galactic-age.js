@@ -53,11 +53,11 @@ export class GalacticAge {
   calculateNextBirthdays() {
     let currentDate = new Date();
     let earthYear, mercuryYear, venusYear, marsYear, jupiterYear;
-    earthYear = this.currentDate.getFullYear();
-    mercuryYear = this.currentDate.getFullYear();
-    venusYear = this.currentDate.getFullYear();
-    marsYear = this.currentDate.getFullYear();
-    jupiterYear = new Date((currentDate.getTime() - this.jupiterAge.getTime()) + 913430718720);
+    earthYear = currentDate.getFullYear();
+    mercuryYear = currentDate.getFullYear();
+    venusYear = currentDate.getFullYear();
+    marsYear = currentDate.getFullYear();
+    jupiterYear = new Date((currentDate.getTime() - this.jupiterAge.getTime()) + (913430718720 / 11.86));
 
     if(this.userBirthDate.getMonth() <= currentDate.getMonth() || this.userBirthDate.getDay() <= currentDate.getDay()) earthYear += 1;
     if(this.mercuryAge.getMonth() <= currentDate.getMonth() || this.mercuryAge.getDay() <= currentDate.getDay()) mercuryYear += 1;
