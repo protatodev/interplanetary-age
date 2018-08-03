@@ -27,7 +27,6 @@ describe('GalacticAge', function(){
   it('should calculate and return the users mercury age based on birthDate and current date', function() {
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
-    console.log(this.mercuryAge);
 
     expect(age.mercuryAgeYears).toEqual(163);
   });
@@ -36,21 +35,21 @@ describe('GalacticAge', function(){
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
 
-    expect(age.earthAgeYears).toEqual(39);
+    expect(age.venusAgeYears).toEqual(63);
   });
 
   it('should calculate and return the users mars age based on birthDate and current date', function() {
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
 
-    expect(age.earthAgeYears).toEqual(39);
+    expect(age.marsAgeYears).toEqual(20);
   });
 
   it('should calculate and return the users jupiter age based on birthDate and current date', function() {
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
 
-    expect(age.earthAgeYears).toEqual(39);
+    expect(age.jupiterAgeYears).toEqual(3);
   });
 
 
