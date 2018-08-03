@@ -6,14 +6,17 @@
 
 ## Description
 
-This program is designed to calculate a persons age based on the calendar year of a planet in the solar system. The program will then use this calculation to display various information to the user such as life expectancy, upcoming birthdate, etc. 
+This program is designed to calculate a persons age based on the calendar year of a planet in the solar system. The program will then use this calculation to display various information to the user such as life expectancy, upcoming birthdate, etc. The focus of this project is to implement proper test driven development (TDD) using Karma and Jasmine.
 
 ## Specs
 
 | Behavior | Input | Output | Why |
 |----------|-------|--------|-----|
-| Make basic splash page with button allowing the user to click to play | *No input* | *No output* | Very simple basic view created with a Home controller to setup a default landing page. Simple to implement |
-
+| Accept a users birthdate | 4/23/1979 | *No output* | Accept the age and save it in a javascript Date object. Simple to implement |
+| Calculate a users age using the birthdate given | 4/23/1979 | 39 | Subtract current date from the given birthdate. Simple to implement |
+| Calculate the users age on Mercury, Venus, Mars and Jupiter | 4/23/1979 | *Various* | Apply appropriate ratio to earth age calculation. Moderately difficult to implement |
+| Calculate years beyond the average life expectancy a user has lived (if applicable) | 4/23/1979 | 3 | Perform calculation using either user provided statistic or various demographics. Moderately difficult to implement |
+| Determine a users life expectancy on each planet based upon one or various factors | 4/23/1979 | 75 | Perform calculation using either user provided statistic or various demographics. Difficult to implement |
 
 ## Setup on OSX / Windows
 
@@ -28,6 +31,7 @@ This program is designed to calculate a persons age based on the calendar year o
 * If you haven't run `npm install` from the cloned repository, do so now
 * From the command line, run `karma init`
 * From the command line, run `jasmine init` from `./node_modules/.bin` folder
+* From the command line, in the root project folder, run `npm run test`
 
 ## Contribution Requirements
 
