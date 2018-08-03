@@ -28,7 +28,7 @@ describe('GalacticAge', function(){
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
 
-    expect(age.earthAgeYears).toEqual(39);
+    expect(age.mercuryAgeYears).toEqual(125);
   });
 
   it('should calculate and return the users venus age based on birthDate and current date', function() {
