@@ -25,6 +25,7 @@ export class GalacticAge {
 
   setUserBirthDate(date) {
     this.userBirthDate = date;
+    console.log(this.userBirthDate);
   }
 
   calculateSolarAge() {

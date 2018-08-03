@@ -40,12 +40,15 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		let galaxy = new GalacticAge();
-		let inputtedBirthdate = $("#inputtedBirthDate").val();
-		let lifeExp = $("#inputtedLifeExp").val();
-		let birthdate = new Date(inputtedBirthdate);
+		const inputtedDay = parseInt($("#inputtedBirthDay").val());
+		const inputtedMonth = parseInt($("#inputtedBirthMonth").val());
+		const inputtedYear = parseInt($("#inputtedBirthYear").val());
+		const lifeExp = parseInt($("#inputtedLifeExp").val());
+		let birthdate = new Date(inputtedYear, inputtedMonth, inputtedDay);
 		galaxy.setUserBirthDate(birthdate);
 		galaxy.calculateSolarAge();
-		galaxy.calculateNextBirthdays(lifeExp);
+		galaxy.calculateNextBirthdays();
+		galaxy.calculateLifeExpectancy(lifeExp);
 
 		fillEarthDiv(galaxy);
 		fillMercuryDiv(galaxy);

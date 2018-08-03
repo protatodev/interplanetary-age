@@ -1,3 +1,14 @@
 .prehidden {
+	margin: 5px;
+	padding: 10px;
 	display: none;
+	border: 1px solid black;
+	background-color: aqua;
+}
+
+.main {
+	display: block;
+	margin: auto;
+	padding: 25px;
+	border: 1px solid black;
 }
