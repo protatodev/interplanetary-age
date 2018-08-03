@@ -40,8 +40,9 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		let galaxy = new GalacticAge();
-		let birthdate = $("#inputtedBirthDate").val();
+		let inputtedBirthdate = $("#inputtedBirthDate").val();
 		let lifeExp = $("#inputtedLifeExp").val();
+		let birthdate = new Date(inputtedBirthdate);
 		galaxy.setUserBirthDate(birthdate);
 		galaxy.calculateSolarAge();
 		galaxy.calculateNextBirthdays(lifeExp);

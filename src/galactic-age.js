@@ -28,7 +28,7 @@ export class GalacticAge {
   }
 
   calculateSolarAge() {
-    const diffAge = new Date().getTime() - this.userBirthDate.getTime();
+    const diffAge = new Date(new Date().getTime() - this.userBirthDate.getTime());
     const diffDate = new Date(diffAge);
 
     this.earthAgeYears = Math.abs(diffDate.getUTCFullYear() - 1970);
