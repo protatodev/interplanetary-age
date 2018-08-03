@@ -1,4 +1,4 @@
-import { Haiku } from './haiku';
+import { GalacticAge } from './galactic-age.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
