@@ -10,11 +10,35 @@ function fillEarthDiv(obj) {
 	$("#earthLifeExp").text(obj.earthLifeExpectancy);
 }
 
+function fillMercuryDiv(obj) {
+	$("#mercuryAge").text(obj.mercuryAgeYears);
+	$("#mercuryNextBday").text(obj.nextMercuryBirthday.toString());
+	$("#mercuryLifeExp").text(obj.mercuryLifeExpectancy);
+}
+
+function fillVenusDiv(obj) {
+	$("#venusAge").text(obj.venusAgeYears);
+	$("#venusNextBday").text(obj.nextVenusBirthday.toString());
+	$("#venusLifeExp").text(obj.venusLifeExpectancy);
+}
+
+function fillMarsDiv(obj) {
+	$("#marsAge").text(obj.marsAgeYears);
+	$("#marsNextBday").text(obj.nextMarsBirthday.toString());
+	$("#marsLifeExp").text(obj.marsLifeExpectancy);
+}
+
+function fillJupiterDiv(obj) {
+	$("#jupiterAge").text(obj.jupiterAgeYears);
+	$("#jupiterNextBday").text(obj.nextJupiterBirthday.toString());
+	$("#jupiterLifeExp").text(obj.jupiterLifeExpectancy);
+}
+
 $(document).ready(function() {
 
-	$(".prehidden").hide();
+	$("#birthDateForm").submit(function(event) {
+		event.preventDefault();
 
-	$("#birthDateForm").submit(function() {
 		let galaxy = new GalacticAge();
 		let birthdate = $("#inputtedBirthDate").val();
 		let lifeExp = $("#inputtedLifeExp").val();
@@ -22,9 +46,13 @@ $(document).ready(function() {
 		galaxy.calculateSolarAge();
 		galaxy.calculateNextBirthdays(lifeExp);
 
+		fillEarthDiv(galaxy);
+		fillMercuryDiv(galaxy);
+		fillVenusDiv(galaxy);
+		fillMarsDiv(galaxy);
+		fillJupiterDiv(galaxy);
 
+		$(".prehidden").hide().fadeIn(1000);
 	});
-
-
 
 });

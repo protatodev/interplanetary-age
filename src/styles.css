@@ -1,3 +1,7 @@
 body {
-  background-color: darkgray;
+  text-align: center;
+}
+
+.prehidden {
+	display: none;
 }
