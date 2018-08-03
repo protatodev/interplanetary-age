@@ -20,8 +20,6 @@ describe('GalacticAge', function(){
   it('should calculate and return the users earth age based on birthDate and current date', function() {
     age.userBirthDate = birthDate; 
     age.calculateSolarAge();
-    console.log(age.marsAge);
-    console.log(age.mercuryAge);
 
     expect(age.earthAgeYears).toEqual(39);
   });
