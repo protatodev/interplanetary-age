@@ -53,24 +53,23 @@ export class GalacticAge {
   calculateNextBirthdays() {
     let currentDate = new Date();
     let earthYear, mercuryYear, venusYear, marsYear, jupiterYear;
-    earthYear = this.userBirthDate.getFullYear();
-    mercuryYear = this.mercuryAge.getFullYear();
-    venusYear = this.venusAge.getFullYear();
-    marsYear = this.marsAge.getFullYear();
-    jupiterYear = this.jupiterAge.getFullYear();
+    earthYear = this.currentDate.getFullYear();
+    mercuryYear = this.currentDate.getFullYear();
+    venusYear = this.currentDate.getFullYear();
+    marsYear = this.currentDate.getFullYear();
+    jupiterYear = new Date((currentDate.getTime() - this.jupiterAge.getTime()) + 913430718720);
 
     if(this.userBirthDate.getMonth() <= currentDate.getMonth() || this.userBirthDate.getDay() <= currentDate.getDay()) earthYear += 1;
     if(this.mercuryAge.getMonth() <= currentDate.getMonth() || this.mercuryAge.getDay() <= currentDate.getDay()) mercuryYear += 1;
     if(this.venusAge.getMonth() <= currentDate.getMonth() || this.venusAge.getDay() <= currentDate.getDay()) venusYear += 1;
     if(this.marsAge.getMonth() <= currentDate.getMonth() || this.marsAge.getDay() <= currentDate.getDay()) marsYear += 1;
+    if(this.jupiterAge.getMonth() <= currentDate.getMonth() || this.jupiterAge.getDay() <= currentDate.getDay()) jupiterYear.setFullYear(jupiterYear.getFullYear() + 1);
     
-    let earthBirthDay = new Date(currentDate.getFullYear() + 1, this.userBirthDate.getMonth(), this.userBirthDate.getDay());
-    let mercuryBirthDay = new Date(currentDate.getFullYear() + 1, this.mercuryAge.getMonth(), this.mercuryAge.getDay());
-    let venusBirthDay = new Date(currentDate.getFullYear() + 1, this.venusAge.getMonth(), this.venusAge.getDay());
-    let marsBirthDay = new Date(currentDate.getFullYear() + 1, this.marsAge.getMonth(), this.marsAge.getDay());
-    let jupiterBirthDay = new Date(currentDate.getFullYear() + 1, this.jupiterAge.getMonth(), this.jupiterAge.getDay());
-
-
+    this.nextEarthBirthday = new Date(earthYear, this.userBirthDate.getMonth(), this.userBirthDate.getDay());
+    this.nextMercuryBirthday = new Date(mercuryYear, this.mercuryAge.getMonth(), this.mercuryAge.getDay());
+    this.nextVenusBirthday = new Date(venusYear, this.venusAge.getMonth(), this.venusAge.getDay());
+    this.nextMarsBirthday = new Date(marsYear, this.marsAge.getMonth(), this.marsAge.getDay());
+    this.nextJupiterBirthday = new Date(jupiterYear.getFullYear(), this.jupiterAge.getMonth(), this.jupiterAge.getDay());
   }
 
 

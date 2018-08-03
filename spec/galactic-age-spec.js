@@ -52,5 +52,45 @@ describe('GalacticAge', function(){
     expect(age.jupiterAgeYears).toEqual(3);
   });
 
+  it('should calculate and return the correct future birthdate for earth', function() {
+    age.userBirthDate = birthDate; 
+    age.calculateSolarAge();
+    age.calculateNextBirthdays();
+
+    expect(age.nextEarthBirthday.getFullYear()).toEqual(2019);
+  });
+
+  it('should calculate and return the correct future birthdate for mercury', function() {
+    age.userBirthDate = birthDate; 
+    age.calculateSolarAge();
+    age.calculateNextBirthdays();
+
+    expect(age.nextMercuryBirthday.getFullYear()).toEqual(2019);
+  });
+
+  it('should calculate and return the correct future birthdate for venus', function() {
+    age.userBirthDate = birthDate; 
+    age.calculateSolarAge();
+    age.calculateNextBirthdays();
+
+    expect(age.nextVenusBirthday.getFullYear()).toEqual(2019);
+  });
+
+  it('should calculate and return the correct future birthdate for mars', function() {
+    age.userBirthDate = birthDate; 
+    age.calculateSolarAge();
+    age.calculateNextBirthdays();
+
+    expect(age.nextMarsBirthday.getFullYear()).toEqual(2019);
+  });
+
+  it('should calculate and return the correct future birthdate for jupiter', function() {
+    age.userBirthDate = birthDate; 
+    age.calculateSolarAge();
+    age.calculateNextBirthdays();
+
+    expect(age.nextJupiterBirthday.getFullYear()).toEqual(2026);
+  });
+
 
 });
